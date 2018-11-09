@@ -41,10 +41,9 @@ dir = c("North", "South", "East", "West") #Creates vector of all the direction n
 
 barplot(bars, names.arg=dir, xlab = "Location" , ylab = "Mean of Observations", col = "blue") #Creates bargraph
 
-region = data[,1]
-observations = data[,2]
+data2 = data.frame(data)
 
-plot.default(data) #Creates plot of observations
+ggplot(data2, aes(as.factor(region),observations)) + geom_point() #Creates plot of observations
 
 #They DO tell different stories. The bar plot is nearly level, showing that all the means are nearly equal. 
 #However, the scatter plot shows that although the means are similar, the data itself varies drastically.
